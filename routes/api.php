@@ -5,7 +5,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
-use App\Http\Controllers\WikulinerController;
+use App\Http\Controllers\JamController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -46,13 +46,13 @@ Route::middleware(['auth:sanctum'])->group(function () {
         ]);
     });
     
-    Route::post("/jam", [WikulinerController::class, 'store']);
-    Route::put("/jam/{id_jam}", [WikulinerController::class, 'update']);
-    Route::delete("/jam/{id_jam}", [WikulinerController::class, 'destroy']);
+    Route::post("/jam", [JamController::class, 'store']);
+    Route::put("/jam/{id_jam}", [JamController::class, 'update']);
+    Route::delete("/jam/{id_jam}", [JamController::class, 'destroy']);
 });
     
-Route::get("/jam", [WikulinerController::class, 'index']);
-Route::get("/jam/image/{id_jam}", [WikulinerController::class, 'getImage']);
+Route::get("/jam", [JamController::class, 'index']);
+Route::get("/jam/image/{id_jam}", [JamController::class, 'getImage']);
     
 
 
